@@ -32,17 +32,16 @@ class MainTabBarController: UITabBarController {
         but.addTarget(self, action: "click", forControlEvents: UIControlEvents.TouchDown)
       self.tabBar.addSubview(but)
         
-        
+
         
         
         
         return but
     
     }()
+    // 点击事件
     func click(){
-//
-//    let alert = UIAlertView(title: "警告", message: "啊啊啊啊啊啊啊啊", delegate: self, cancelButtonTitle: "取消")
-//        alert.alertViewStyle=UIAlertViewStyle.LoginAndPasswordInput
+
       let alert =  UIAlertController(title: "hah", message: "呵呵呵呵呵", preferredStyle:UIAlertControllerStyle.Alert)
         let action = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
         alert.addAction(action)

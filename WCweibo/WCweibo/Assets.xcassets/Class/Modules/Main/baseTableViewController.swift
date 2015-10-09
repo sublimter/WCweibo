@@ -19,10 +19,8 @@ class baseTableViewController: UITableViewController {
     }
     func setView(){
         print("haha")
-        view = UIView()
-        view.backgroundColor = UIColor.redColor()
+        view = visitView()
         
-    
-    
+        
     }
 }

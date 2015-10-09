@@ -16,6 +16,7 @@
 		1817D0541BC66745003DB490 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1817D0531BC66745003DB490 /* MessageTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1817D0561BC667C4003DB490 /* MyfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1817D0551BC667C4003DB490 /* MyfileTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1817D0581BC6B5E6003DB490 /* baseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1817D0571BC6B5E6003DB490 /* baseTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		183BD5D41BC7D98C006A91EC /* visitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BD5D31BC7D98C006A91EC /* visitView.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1817D0531BC66745003DB490 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		1817D0551BC667C4003DB490 /* MyfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyfileTableViewController.swift; sourceTree = "<group>"; };
 		1817D0571BC6B5E6003DB490 /* baseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = baseTableViewController.swift; sourceTree = "<group>"; };
+		183BD5D31BC7D98C006A91EC /* visitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = visitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			children = (
 				1817D04D1BC66570003DB490 /* MainTabBarController.swift */,
 				1817D0571BC6B5E6003DB490 /* baseTableViewController.swift */,
+				183BD5D31BC7D98C006A91EC /* visitView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				1817D02E1BC6632F003DB490 /* AppDelegate.swift in Sources */,
 				1817D04E1BC66570003DB490 /* MainTabBarController.swift in Sources */,
 				1817D0541BC66745003DB490 /* MessageTableViewController.swift in Sources */,
+				183BD5D41BC7D98C006A91EC /* visitView.swift in Sources */,
 				1817D0521BC6672F003DB490 /* HomeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +361,7 @@
 				1817D0411BC6632F003DB490 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
