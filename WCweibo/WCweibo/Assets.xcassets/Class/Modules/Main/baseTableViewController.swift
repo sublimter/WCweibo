@@ -11,6 +11,7 @@ import UIKit
 
 class baseTableViewController: UITableViewController {
     var flag = false
+    var visit:visitView?
     override func loadView() {
         flag ? super.loadView() : setView()
         
@@ -19,8 +20,9 @@ class baseTableViewController: UITableViewController {
     }
     func setView(){
         print("haha")
-        view = visitView()
-        
+        visit = visitView()
+        // 设置view的颜色跟图片的深色一致
+        view = visit
         
     }
 }

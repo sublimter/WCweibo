@@ -9,12 +9,22 @@
 import UIKit
 class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
-        addChildView()
+        addChildViews()
         tabBar.tintColor = UIColor.orangeColor()
         
     }
+    
+    func add(vc:UIViewController,title:String,image:String){
+        
+        let na = UINavigationController(rootViewController:vc)
+        na.title = title
+        na.tabBarItem.image = UIImage(named:image)
+        addChildViewController(na)
+        
+    }
+
     // 重载
-    func addChildView() {
+    func addChildViews() {
       add(HomeTableViewController(), title: "主页", image: "tabbar_home")
         add(DiscoveryTableViewController(), title: "发现", image: "tabbar_discover")
         addChildViewController(UIViewController())
@@ -61,15 +71,6 @@ class MainTabBarController: UITabBarController {
     
     
     
-    
-    func add(vc:UIViewController,title:String,image:String){
-        
-        let na = UINavigationController(rootViewController:vc)
-        na.title = title
-        na.tabBarItem.image = UIImage(named:image)
-        addChildViewController(na)
-
-}
     
     
     

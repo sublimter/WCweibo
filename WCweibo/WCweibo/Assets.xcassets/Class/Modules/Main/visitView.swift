@@ -12,6 +12,8 @@ class visitView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setView()
+        
+        
     }
 // 禁止xib,sb调用本类
     required init?(coder aDecoder: NSCoder) {
@@ -19,12 +21,55 @@ class visitView: UIView {
         super.init(coder:aDecoder)
         setView()
     }
+    
+    //设置转动
+    func setAnimation(){
+        
+        let ani = CABasicAnimation(keyPath: "transform.rotation")
+        ani.toValue = 2 * M_PI
+        ani.repeatCount = MAXFLOAT
+        ani.duration = 10
+        ani.removedOnCompletion = false
+        iconView.layer.addAnimation(ani, forKey: nil)
+    }
+    
+    func hah(){
+    
+    
+    }
+     func setpart(ishome:Bool,image:String,tex:String){
+        
+        
+//        let finished:()->()={
+//           self.icon2View.image = UIImage(named: image)
+//           self.textLable.text = tex
+//           self.iconView.hidden = true
+//            
+//        }
+        
+        ishome ? setAnimation() : {
+            self.icon2View.image = UIImage(named: image)
+            self.textLable.text = tex
+            self.iconView.hidden = true
+            
+        }()
+
+
+    
+    
+    
+    }
+    
+    
+    
     func setView(){
        addSubview(iconView)
+       addSubview(icon3View)
        addSubview(icon2View)
        addSubview(textLable)
        addSubview(loginbut)
        addSubview(registerBut)
+        
     // MARK: -自动布局 
         
         iconView.translatesAutoresizingMaskIntoConstraints = false
@@ -32,6 +77,10 @@ class visitView: UIView {
         addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute:
             NSLayoutAttribute.CenterY, multiplier: 1.0, constant: 0))
         
+        icon3View.translatesAutoresizingMaskIntoConstraints = false
+        addConstraint(NSLayoutConstraint(item: icon3View, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1.0, constant: 0))
+        addConstraint(NSLayoutConstraint(item: icon3View, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute:
+            NSLayoutAttribute.CenterY, multiplier: 1.0, constant: 0))
         
         icon2View.translatesAutoresizingMaskIntoConstraints = false
         addConstraint(NSLayoutConstraint(item: icon2View, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.CenterX, multiplier: 1.0, constant: 0))
@@ -42,7 +91,7 @@ class visitView: UIView {
         addConstraint(NSLayoutConstraint(item: textLable, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.CenterX, multiplier: 1.0, constant: 0))
         addConstraint(NSLayoutConstraint(item: textLable, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute:
             NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 16))
-        addConstraint(NSLayoutConstraint(item: textLable, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.Width, multiplier: 1.0, constant:24 ))
+        addConstraint(NSLayoutConstraint(item: textLable, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.Width, multiplier: 1.0, constant:200))
         
         
         loginbut.translatesAutoresizingMaskIntoConstraints = false
@@ -60,8 +109,8 @@ class visitView: UIView {
             NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 16))
         addConstraint(NSLayoutConstraint(item: registerBut, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1.0, constant:50 ))
         addConstraint(NSLayoutConstraint(item:registerBut , attribute: NSLayoutAttribute.Height , relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1.0, constant: 30))
-        
-
+        // 背景颜色跟遮罩视图一致
+        backgroundColor = UIColor(white: 237/255.0, alpha: 1.0)
 
         
         
@@ -80,14 +129,20 @@ class visitView: UIView {
     let v2 = UIImageView(image:UIImage(named: "visitordiscover_feed_image_house"))
     return v2
     }()
+  private lazy var icon3View:UIImageView = {
     
+    let v3 = UIImageView(image:UIImage(named: "visitordiscover_feed_mask_smallicon"))
+    
+    return v3
+    }()
     
   private lazy var textLable:UILabel = {
     let label = UILabel()
     label.text = "关注一些人，回这里看看有什么惊喜"
     label.textColor = UIColor.darkGrayColor()
     label.font = UIFont.systemFontOfSize(14)
-    label.sizeToFit()
+    label.numberOfLines = 0
+//    label.sizeToFit()
     return label
     }()
     
